@@ -13,10 +13,17 @@
     <main>
       <div class="container">
         <div class="container-main">
+          <form class="container-form" id="form">
+            <label for="tamanio">Ingrese el tamaño de la grilla (1-100):</label>
+            <input type="tel" name="grilla-tamanio" id="tamanio" />
+          </form>
           <section class="container-btn">
             <button class="btn-grilla" data-generar-grilla>
-              Generar Grilla
+              Generar Nueva Grilla
             </button>
+          </section>
+          <section class="container-info">
+            <h2>Tamaño de la grilla: <span data-tamaño></span></h2>
           </section>
           <section class="cuadricula" data-cuadricula></section>
         </div>
@@ -25,7 +32,9 @@
     <footer class="footer">
       <p>Hecho por Gustavo Miño</p>
     </footer>
-
+    <template id="template-grilla">
+      <div class="grilla"></div>
+    </template>
     <script src="script.js"></script>
   </body>
 </html>
