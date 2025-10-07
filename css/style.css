@@ -55,7 +55,6 @@ main .container {
 }
 
 .cuadricula {
-  background-color: crimson;
   width: 320px;
   height: 320px;
   display: grid;
@@ -89,4 +88,10 @@ main .container {
   cursor: pointer;
   font-family: monospace;
   font-weight: bold;
+}
+
+@media screen and (min-width: 1024px) {
+  main {
+    padding: 2rem;
+  }
 }

@@ -53,7 +53,12 @@ class Display {
   mostrarMensajeValidacion() {
     const $mensajeValidacion = d.createElement("span");
     $mensajeValidacion.textContent = "Valor Incorrecto, Intente de nuevo";
+    $mensajeValidacion.style.color = "red";
     this.$inputTamaño.parentElement.appendChild($mensajeValidacion);
+    setTimeout(() => {
+      let hijo = this.$inputTamaño.parentElement.lastElementChild;
+      this.$inputTamaño.parentElement.removeChild(hijo);
+    }, 5000);
   }
 }
 class Controlador {
@@ -80,7 +85,6 @@ class Controlador {
 
   click(e) {
     if (e.target === display.$btnGrilla) {
-      //Crear una validacion para numero entre 1 y 100
       if (display.$inputTamaño.value > 0 && display.$inputTamaño.value <= 100) {
         grilla.tamaño = display.$inputTamaño.value;
         display.limpiarCuadricula();
@@ -94,7 +98,7 @@ class Controlador {
   }
 
   mouseover(e) {
-    /*
+    
     if (e.target.classList.contains("grilla")) {
       e.target.style.backgroundColor = `rgb(${Math.floor(
         Math.random() * 256
@@ -102,7 +106,7 @@ class Controlador {
         Math.random() * 256
       )})`;
     }
-    */
+    
   }
 }
 
